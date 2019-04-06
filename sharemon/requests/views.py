@@ -6,7 +6,7 @@ from django.http import HttpResponse
 
 def post_list(request):
     posts = models.Post.objects.all()
-    return render(request, "posts/post_list.html", {'posts': posts})
+    return render(request, "html/request.html", {'posts': posts})
 
 
 def post_detail(request, slug):
