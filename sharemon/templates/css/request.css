@@ -1,8 +1,16 @@
 .request-container {
-    padding: 256px 64px;
+    background-color: #555;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 128px 64px;
     text-align: center;
 }
 
+.request-container h1 {
+    margin-bottom: 50px;
+}
+
 .card {
+    color: black;
     margin: 32px 32px;
 }
