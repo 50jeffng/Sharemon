@@ -11,8 +11,8 @@
     {% for post in posts %}
 
         <div class = "post">
-            <h2>{{post.title}}</h2>
-            <p>{{post.body}}</p>
+            <h2><a href = "{% url 'detail' slug=post.slug %}">{{post.title}}</a></h2>
+            <p>{{post.snippet}}</p>
 
         </div>
 
