@@ -12,5 +12,5 @@ def post_list(request):
 def post_detail(request, slug):
     #return HttpResponse(slug)
     post = models.Post.objects.get(slug = slug)
-    return render(request, 'posts/post_detail.html', {'post': post})
+    return render(request, 'html/request_details.html', {'post': post})
 

@@ -1,0 +1,27 @@
+body {
+    background-color: #555 !important;
+}
+
+.request_details-container {
+    background-color: #555;
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 128px 64px;
+    text-align: center;
+}
+
+.request_details-content {
+    text-align: left;
+}
+
+.left-content {
+    float: left;
+}
+
+.right-content {
+    float: right;
+}
+
+.request_details-content .jumbotron{
+    background-color: #888 !important;
+}
