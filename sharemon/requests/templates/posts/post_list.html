@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+</head>
+<body>
+
+<div class="requests">
+
+    {% for post in posts %}
+
+        <div class = "post">
+            <h2>{{post.title}}</h2>
+            <p>{{post.body}}</p>
+
+        </div>
+
+
+    {% endfor %}
+
+
+</div>
+
+
+
+</body>
+</html>
