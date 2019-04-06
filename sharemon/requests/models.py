@@ -15,6 +15,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     body= models.TextField()
     date = models.DateField()
+    slug = models.SlugField()
 
     RESOLVED = 1
     PENDING = 2
