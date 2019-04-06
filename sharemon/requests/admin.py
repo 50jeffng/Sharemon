@@ -4,4 +4,3 @@ from . import models
 
 admin.site.register(models.Post)
 admin.site.register(models.Student)
-admin.site.register(models.LostAndFound)
