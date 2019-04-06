@@ -9,6 +9,11 @@ def post_list(request):
     return render(request, "html/request.html", {'posts': posts})
 
 
+def event_list(request):
+    events = models.Event.objects.all()
+    return render(request, "html/event.html", {'events': events})
+
+
 def post_detail(request, slug):
     #return HttpResponse(slug)
     post = models.Post.objects.get(slug = slug)

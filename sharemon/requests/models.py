@@ -21,6 +21,9 @@ class Post(models.Model):
     slug = models.SlugField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     time = models.TimeField()
+    reward = models.CharField(max_length=100, default = 'REWARD: $5')
+    location = models.CharField(max_length=100, default = 'Menzies')
+    cover = models.ImageField(upload_to='images/', default= 'images/garden-locations-map.jpg')
 
     RESOLVED = 1
     PENDING = 2
@@ -46,3 +49,19 @@ class Post(models.Model):
 
 class LostAndFound(Post):
     item = models.CharField(max_length=50)
+
+
+class Event(models.Model):
+    title = models.CharField(max_length=100)
+    body = models.TextField()
+    date = models.DateField()
+    slug = models.SlugField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    time = models.TimeField()
+    location = models.CharField(max_length=100, default = 'Menzies')
+    cover = models.ImageField(upload_to='images/', default= 'images/garden-locations-map.jpg')
+    when = models.CharField(default="2:00pm - 4:00pm 7/4/2019", max_length=100)
+
+
+    def __str__(self):
+        return self.title
