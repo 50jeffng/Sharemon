@@ -1,0 +1,38 @@
+body {
+    margin: 25px;
+    background-color: #333;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 14px;
+    margin-top: 75px;
+}
+
+h1 {
+    font-size: 35px;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    margin-bottom: 50px
+}
+
+p {
+    font-size: 35px;
+    font-family: 'Oxygen', sans-serif;
+    font-weight: normal;
+    color: white;
+    margin-top: 5px;
+}
+
+.divider {
+    border-color: white;
+    border-style: solid;
+    border-width: 0 0 1px;
+    height: 10px;
+    line-height: 20px;
+    text-align:center;
+    overflow: visable;
+}
+
+.section h5 {
+    color: white;
+}
