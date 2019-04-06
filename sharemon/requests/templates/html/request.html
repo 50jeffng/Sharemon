@@ -40,7 +40,7 @@
 							<a class="card-title h3" href = "{% url 'detail' slug=post.slug %}">{{post.title}}</a>
 							<p class="card-text">{{post.snippet}}</p>
 						</div>
-						<div class="card-footer"><small class="text-muted">{{post.date}}</small></div>
+						<div class="card-footer"><small class="text-muted">{{post.date}} | {{post.time}}</small></div>
 					</div>
 				</div>
 			{% endfor %}

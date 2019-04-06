@@ -8,16 +8,19 @@ class Student(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
 
+
 class Status:
     solved = 0
     pending = 1
 
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    body= models.TextField()
+    body = models.TextField()
     date = models.DateField()
     slug = models.SlugField()
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    time = models.TimeField()
 
     RESOLVED = 1
     PENDING = 2
