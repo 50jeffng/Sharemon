@@ -14,3 +14,7 @@
     color: black;
     margin: 32px 32px;
 }
+
+.card a {
+    text-decoration: none;
+}
