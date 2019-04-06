@@ -1,0 +1,67 @@
+body {
+	margin: 0;
+  padding: 0;
+  font-size: 28px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+.no-hover{
+	pointer-events: none;
+}
+
+.logo {
+  float: left;
+}
+
+/* ~~ Top Navigation Bar ~~ */
+
+#navigation-container {
+  width: 1200px;
+  margin: 0 auto;
+  height: 70px;
+}
+
+.navigation-bar {
+  background-color: #333;
+  height: 70px;
+  width: 100%;
+	text-align: center;
+	position: sticky;
+	position: -webkit-sticky; /* Safari */
+  top: 0;
+}
+
+.navigation-bar img {
+	float:left;
+}
+
+.navigation-bar ul {
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  display: inline-block;
+}
+
+.navigation-bar li {
+  list-style-type: none;
+  padding: 0px;
+  display: inline;
+}
+
+.navigation-bar li a {
+  color: white;
+  font-size: 16px;
+  font-family: 'Ubuntu Mono', monospace;
+  text-decoration: none;
+  line-height: 70px;
+  padding: 5px 15px;
+  opacity: 0.7;
+}
+
+.navigation-bar li a:hover {
+  color: grey;
+}
+
+.navigation-bar .active {
+	color: aquamarine;
+}
