@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -16,13 +17,13 @@ class Post(models.Model):
     body= models.TextField()
     date = models.DateField()
     slug = models.SlugField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     RESOLVED = 1
     PENDING = 2
     STATUS_CHOICES = (
         (RESOLVED, 'resolved'),
         (PENDING, 'pending')
-
     )
 
     status = models.IntegerField(choices=STATUS_CHOICES, default=PENDING)
@@ -39,3 +40,6 @@ class Post(models.Model):
         #self.student = student
         #self.status = Status.pending
 
+
+class LostAndFound(Post):
+    item = models.CharField(max_length=50)
