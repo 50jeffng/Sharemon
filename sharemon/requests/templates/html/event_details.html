@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Requests</title>
-  <link rel="stylesheet" type="text/css" href="/static/request.css" />
+  <link rel="stylesheet" type="text/css" href="/static/request_details.css" />
   <link rel="stylesheet" type="text/css" href="/static/navbar.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu|Ubuntu+Mono" rel="stylesheet">
@@ -19,7 +19,7 @@
 		<ul class="navbar-nav w-100 justify-content-center">
 		</ul>
 		<ul class="nav navbar-nav ml-auto w-100 justify-content-end">
-			<li class="nav-item active">
+			<li class="nav-item">
 				<a class="nav-link" href="{% url 'list' %}">Requests</a>
 			</li>
 			<li class="nav-item">
@@ -29,27 +29,32 @@
 	</div>
 </nav>
 
-<div class="request-container">
-		<h1>Requests</h1>
-		<div class="d-flex justify-content-center card-deck text-center">
-			{% for post in posts %}
-				<div id="{{ forloop.counter0 }}">
-					<div class="card shadow bg-white rounded" style="width: 18rem;">
-						<img class="card-img-top" alt="Image cap [100%x180]" style="height: 180px; width: 100%; display: block;" src="{{post.cover.url}}" data-holder-rendered="true">
-						<div class="card-body">
-							<a class="card-title h3" href = "{% url 'detail' slug=post.slug %}">{{post.title}}</a>
-							<p class="card-text">LOCATION: {{post.location}}</p>
-							<p class="card-text">REWARD: {{post.reward}}</p>
+<div class="request_details-container">
+        <h1>{{event.title}}</h1>
+        <div class="request_details-content">
+            <div class="container">
+                <p class = "left-content"><small class="text-info">{{event.author}}</small></p>
+                <p class = "right-content"><small class="text-info">{{event.date}} | {{event.time}}</small></p>
+                    <br/>
+                    <br/>
+                    <div class="jumbotron">
+                        <blockquote>
+                            <p>WHERE : {{event.location}}</p>
+                            <p>WHEN : {{event.when}}</p>
+                            <img alt="Image cap [100%x180]" style="height: 50%; width: 50%; display: block;" src="{{event.cover.url}}" data-holder-rendered="true">
 
-						</div>
-						<div class="card-footer"><small class="text-muted time-ago">{{post.date}} | {{post.time}}</small></div>
-					</div>
-				</div>
-			{% endfor %}
-		</div>
+                            <p> </p>
+                            <p>WHAT IS HAPPENING? </p>
+                            <p> </p>
+                            <p>{{event.body}}</p>
+                        </blockquote>
+                    </div>
+            </div>
+
+        </div>
 </div>
 
-<script src="/static/request.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>

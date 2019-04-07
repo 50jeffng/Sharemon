@@ -19,3 +19,8 @@ def post_detail(request, slug):
     post = models.Post.objects.get(slug = slug)
     return render(request, 'html/request_details.html', {'post': post})
 
+def event_detail(request, slug):
+    #return HttpResponse(slug)
+    event = models.Event.objects.get(slug = slug)
+    return render(request, 'html/event_details.html', {'event': event})
+

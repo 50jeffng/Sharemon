@@ -11,7 +11,7 @@
 <body class="pt-5">
 
 <nav class="navbar navbar-style navbar-dark navbar-expand-md bg-dark fixed-top justify-content-center">
-	<a href="/" class="navbar-brand d-flex w-50 mr-auto">shareMon</a>
+	<a href="{% url 'list' %}" class="navbar-brand d-flex w-50 mr-auto">shareMon</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar3">
 		<span class="navbar-toggler-icon"></span>
 	</button>
@@ -37,7 +37,7 @@
 					<div class="card shadow bg-white rounded" style="width: 18rem;">
 						<img class="card-img-top" alt="Image cap [100%x180]" style="height: 180px; width: 100%; display: block;" src="{{event.cover.url}}" data-holder-rendered="true">
 						<div class="card-body">
-							<a class="card-title h3">{{event.title}}</a>
+							<a class="card-title h3" href="{% url 'event_detail' slug=event.slug %}">{{event.title}}</a>
 							<p class="card-text">LOCATION: {{event.location}}</p>
 							<p class="card-text">WHEN: {{event.when}}</p>
 
