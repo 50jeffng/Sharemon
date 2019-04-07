@@ -38,7 +38,6 @@ const allTimePosted = document.getElementsByClassName("time-ago");
 
 for (let i = 0; i < allTimePosted.length; i++) {
     const [datePosted, timePosted] = allTimePosted[i].innerHTML.split('|');
-    console.log(timePosted)
     const datetimePosted = new Date(datePosted + convertTimeStringTo24Hours(timePosted));
     const diffTime = Math.abs(datetimePosted.getTime() - (new Date().getTime()));
     const diffSec = Math.ceil(diffTime / (1000));
