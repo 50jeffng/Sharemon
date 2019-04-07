@@ -23,9 +23,12 @@ window.onload = generateCards();
 // https://stackoverflow.com/questions/31250656/convert-timestamp-from-am-pm-to-24-hour-in-javascript
 function convertTimeStringTo24Hours(timeString) {
     if (timeString.match(/p.m.$/)) {
-      const match = timeString.match(/([0-9]+):([0-9]+) p.m./);
-      const hours = parseInt(match[1]) + 12;
-      const minutes = match[2];
+      const matchShort = timeString.match(/([0-9]+) p.m./);
+      const matchLong = timeString.match(/([0-9]+):([0-9]+) p.m./);
+      const match = matchLong ? matchLong : matchShort;
+      const hoursIndex = match.length < 3 ? 0 : 1;
+      const hours = parseInt(match[hoursIndex]) + 12;
+      const minutes = match.length < 3 ? 0 : match[2];
       return hours + ':' + minutes;
     } else {
       return timeString.replace('a.m.', '');
@@ -35,6 +38,7 @@ const allTimePosted = document.getElementsByClassName("time-ago");
 
 for (let i = 0; i < allTimePosted.length; i++) {
     const [datePosted, timePosted] = allTimePosted[i].innerHTML.split('|');
+    console.log(timePosted)
     const datetimePosted = new Date(datePosted + convertTimeStringTo24Hours(timePosted));
     const diffTime = Math.abs(datetimePosted.getTime() - (new Date().getTime()));
     const diffSec = Math.ceil(diffTime / (1000));
